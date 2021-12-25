@@ -20,6 +20,7 @@ CARAVEL_PATH ?= $(CARAVEL_ROOT)
 CARAVEL_FIRMWARE_PATH = $(CARAVEL_PATH)/verilog/dv/caravel
 CARAVEL_VERILOG_PATH  = $(CARAVEL_PATH)/verilog
 CARAVEL_RTL_PATH = $(CARAVEL_VERILOG_PATH)/rtl
+UPRJ_GL_PATH = $(UPRJ_VERILOG_PATH)/gl
 CARAVEL_BEHAVIOURAL_MODELS = $(CARAVEL_VERILOG_PATH)/dv/caravel
 
 ## User Project Pointers
@@ -55,6 +56,17 @@ coco_test: ${PATTERN}.hex
 	-I $(PDK_PATH) \
 	-I $(CARAVEL_BEHAVIOURAL_MODELS) -I $(CARAVEL_RTL_PATH) \
 	-I $(UPRJ_BEHAVIOURAL_MODELS)    -I $(UPRJ_RTL_PATH)
+	
+	MODULE=test_skullfet vvp -M $$(cocotb-config --prefix)/cocotb/libs -m libcocotbvpi_icarus sim_build/sim.vvp
+	! grep failure results.xml
+
+coco_test_gl: ${PATTERN}.hex
+	rm -rf sim_build/
+	mkdir sim_build/
+	iverilog -o sim_build/sim.vvp -s skullfet_tb skullfet_tb.v -DSIM -DFUNCTIONAL \
+	-I $(PDK_PATH) \
+	-I $(CARAVEL_BEHAVIOURAL_MODELS) -I $(CARAVEL_RTL_PATH) \
+	-I $(UPRJ_BEHAVIOURAL_MODELS)    -I $(UPRJ_RTL_PATH) -I $(UPRJ_GL_PATH)
 	
 	MODULE=test_skullfet vvp -M $$(cocotb-config --prefix)/cocotb/libs -m libcocotbvpi_icarus sim_build/sim.vvp
 	! grep failure results.xml
