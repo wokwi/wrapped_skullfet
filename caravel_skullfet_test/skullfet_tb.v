@@ -21,10 +21,10 @@
 `include "caravel_netlists.v"
 `include "spiflash.v"
 
-module project_tb;
+module skullfet_tb;
     initial begin
-        $dumpfile ("project.vcd");
-        $dumpvars (0, project_tb);
+        $dumpfile ("skullfet.vcd");
+        $dumpvars (0, skullfet_tb);
         #1;
     end
 
@@ -37,8 +37,9 @@ module project_tb;
     wire [37:0] mprj_io;
 
     ///// convenience signals that match what the cocotb test modules are looking for
-
-
+		wire [3:0] c_test_result = uut.soc.mgmt_out_predata[31:28];
+		wire inverter_in = mprj_io[8];
+		wire inverter_out = mprj_io[9];
     /////
 
 
@@ -79,7 +80,7 @@ module project_tb;
 	);
 
 	spiflash #(
-		.FILENAME("project.hex")
+		.FILENAME("skullfet_test.hex")
 	) spiflash (
 		.csb(flash_csb),
 		.clk(flash_clk),

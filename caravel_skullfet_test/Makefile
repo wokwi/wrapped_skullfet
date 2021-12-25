@@ -37,12 +37,12 @@ SIM?=RTL
 
 # include the modules that cocotb needs for test
 export COCOTB_REDUCED_LOG_FMT=1
-export PYTHONPATH := $(UPRJ_RTL_PATH)/wrapped_project/project/test
+export PYTHONPATH := $(UPRJ_RTL_PATH)/wrapped_skullfet/skullfet/test
 export LIBPYTHON_LOC=$(shell cocotb-config --libpython)
 
 .SUFFIXES:
 
-PATTERN = project
+PATTERN = skullfet_test
 
 all:  coco_test
 
@@ -51,12 +51,12 @@ hex:  ${PATTERN:=.hex}
 coco_test: ${PATTERN}.hex
 	rm -rf sim_build/
 	mkdir sim_build/
-	iverilog -o sim_build/sim.vvp -s project_tb project_tb.v -DSIM -DFUNCTIONAL \
+	iverilog -o sim_build/sim.vvp -s skullfet_tb skullfet_tb.v -DSIM -DFUNCTIONAL \
 	-I $(PDK_PATH) \
 	-I $(CARAVEL_BEHAVIOURAL_MODELS) -I $(CARAVEL_RTL_PATH) \
 	-I $(UPRJ_BEHAVIOURAL_MODELS)    -I $(UPRJ_RTL_PATH)
 	
-	MODULE=test_project vvp -M $$(cocotb-config --prefix)/cocotb/libs -m libcocotbvpi_icarus sim_build/sim.vvp
+	MODULE=test_skullfet vvp -M $$(cocotb-config --prefix)/cocotb/libs -m libcocotbvpi_icarus sim_build/sim.vvp
 	! grep failure results.xml
 
 %.vvp: %_tb.v %.hex

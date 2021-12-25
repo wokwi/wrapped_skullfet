@@ -11,7 +11,7 @@
 //`define USE_IRQ 1
 
 // update this to the name of your module
-module wrapped_project(
+module wrapped_skullfet(
 `ifdef USE_POWER_PINS
     inout vccd1,	// User area 1 1.8V supply
     inout vssd1,	// User area 1 digital ground
@@ -147,10 +147,21 @@ module wrapped_project(
 
     // permanently set oeb so that outputs are always enabled: 0 is output, 1 is high-impedance
     assign buf_io_oeb = {`MPRJ_IO_PADS{1'b0}};
+    assign buf_io_oeb[8] = 1'b1;
 
     // Instantiate your module here, 
     // connecting what you need of the above signals. 
     // Use the buffered outputs for your module's outputs.
+
+    skullfet_inverter skullfet_inverter_1(
+        .A(la1_data_in[0]),
+        .Y(buf_la1_data_out[0])
+    );
+
+    skullfet_inverter skullfet_inverter_2(
+        .A(io_in[8]),
+        .Y(buf_io_out[9])
+    );
 
 endmodule 
 `default_nettype wire

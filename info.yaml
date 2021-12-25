@@ -1,10 +1,10 @@
 --- 
 # information
 project: 
-  title: "title"
-  description: "description"
+  title: "SkullFET"
+  description: "Barebone MOSFET transistors"
   picture: docs/empty.png
-  author: "Author"
+  author: "Uri Shaked"
   license: LICENSE
 
 # optional interfaces you want to use: gpio, la1, la2, la3, irq, clk2, wishbone & openram
@@ -13,14 +13,14 @@ interfaces: ['la1', 'gpio']
 # test within caravel
 caravel_test:
   recipe: "coco_test"
-  directory: "caravel_test"
-  id: 1
-  module_name: "wrapped_project"
+  directory: "caravel_skullfet_test"
+  id: 5
+  module_name: "wrapped_skullfet"
 
 # module test
 module_test:
   recipe: "all" 
-  directory: "project directory"
+  directory: "skullfet"
   makefile: "Makefile"
 
 # run the wrapper formal proof
@@ -35,11 +35,11 @@ openlane:
 # source required for various configs and module instantiation
 source:
     - wrapper.v
-    - other source files here
+    - src/skullfet.v
 
 # gds - check nothing on metal 5, DRC & LVS
 gds:
   directory: "gds"
-  gds_filename: "project.gds"
-  lvs_filename: "project.lvs.powered.v"
-  lef_filename: "project.lef"
+  gds_filename: "wrapped_skullfet.gds"
+  lvs_filename: "wrapped_skullfet.lvs.powered.v"
+  lef_filename: "wrapped_skullfet.lef"
