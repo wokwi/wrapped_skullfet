@@ -3,7 +3,7 @@
 project: 
   title: "SkullFET"
   description: "Barebone MOSFET transistors"
-  picture: docs/empty.png
+  picture: docs/skullfet_inverter.png
   author: "Uri Shaked"
   license: LICENSE
 
