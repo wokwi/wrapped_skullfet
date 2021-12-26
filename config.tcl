@@ -49,7 +49,7 @@ set ::env(EXTRA_GDS_FILES) [glob $::env(DESIGN_DIR)/macros/*.gds]
 
 # Needed for PDN to work with sub macros
 set ::env(FP_PDN_VOFFSET) 0
-set ::env(FP_PDN_VPITCH) 30
-
-# LVS fails, unfortunately. Disable it until we figure out why...
-set ::env(QUIT_ON_LVS_ERROR) "0"
+set ::env(FP_PDN_VPITCH) 16
+set ::env(PDN_CFG) $::env(DESIGN_DIR)/pdn.tcl
+set ::env(FP_HORIZONTAL_HALO) 1
+set ::env(FP_VERTICAL_HALO) 1
