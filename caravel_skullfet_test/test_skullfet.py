@@ -40,7 +40,7 @@ async def test_logic(dut):
     assert dut.inverter_out.value == 1
 
     # Wait for C test code to finish running
-    await First(Edge(dut.c_test_result), ClockCycles(dut.clk, 26000))
+    await First(Edge(dut.c_test_result), ClockCycles(dut.clk, 12000))
 
     # let the C code check the logic analyzer
     assert int(dut.c_test_result) == TEST_RESULT_PASS

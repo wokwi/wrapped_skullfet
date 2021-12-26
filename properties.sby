@@ -5,10 +5,10 @@ mode prove
 smtbmc
 
 [script]
-read -formal wrapper.v skullfet-formal.v
+read -formal wrapper.v skullfet-functional.v
 prep -top wrapped_skullfet
 
 [files]
 wrapper.v
 properties.v
-src/skullfet-formal.v
+src/skullfet-functional.v

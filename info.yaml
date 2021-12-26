@@ -36,7 +36,7 @@ openlane:
 # source required for various configs and module instantiation
 source:
     - wrapper.v
-    - src/skullfet.v
+    - src/skullfet-functional.v
 
 # gds - check nothing on metal 5, DRC & LVS
 gds:

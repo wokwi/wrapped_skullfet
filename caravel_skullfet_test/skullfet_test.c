@@ -39,8 +39,8 @@ void main()
     reg_la0_oenb = 0; // output enable on
     reg_la0_data = 1 << PROJECT_ID;
 
-    reg_la1_iena = 0;
-    reg_la1_oenb = 0;
+    reg_la1_iena = 0xffffffff; // input enable on
+    reg_la1_oenb = 0; // output enable on
 
     // Test inverter logic
     reg_la1_data = 1;

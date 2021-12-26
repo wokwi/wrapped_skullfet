@@ -37,9 +37,11 @@ module skullfet_tb;
     wire [37:0] mprj_io;
 
     ///// convenience signals that match what the cocotb test modules are looking for
-		wire [3:0] c_test_result = uut.soc.mgmt_out_predata[31:28];
-		wire inverter_in = mprj_io[8];
+    wire inverter_in;
+    assign mprj_io[8] = inverter_in;
 		wire inverter_out = mprj_io[9];
+
+		wire [3:0] c_test_result = uut.soc.mgmt_out_predata[31:28];
     /////
 
 
