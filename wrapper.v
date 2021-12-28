@@ -153,11 +153,19 @@ module wrapped_skullfet(
     // Use the buffered outputs for your module's outputs.
 
     skullfet_inverter skullfet_inverter_1(
+`ifdef USE_POWER_PINS
+        .VPWR(vccd1),
+        .VGND(vssd1),
+`endif
         .A(la1_data_in[0]),
         .Y(buf_la1_data_out[0])
     );
 
     skullfet_inverter skullfet_inverter_2(
+`ifdef USE_POWER_PINS
+        .VPWR(vccd1),
+        .VGND(vssd1),
+`endif
         .A(io_in[8]),
         .Y(buf_io_out[9])
     );
