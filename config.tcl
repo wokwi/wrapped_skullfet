@@ -51,8 +51,8 @@ set ::env(EXTRA_GDS_FILES) [glob $::env(DESIGN_DIR)/macros/*.gds]
 set ::env(FP_PDN_VOFFSET) 0
 set ::env(FP_PDN_VPITCH) 16
 set ::env(PDN_CFG) $::env(DESIGN_DIR)/pdn.tcl
-set ::env(FP_HORIZONTAL_HALO) 1
-set ::env(FP_VERTICAL_HALO) 1
+set ::env(FP_HORIZONTAL_HALO) 1.5
+set ::env(FP_VERTICAL_HALO) 1.5
 
 # Workaround for https://github.com/The-OpenROAD-Project/OpenROAD/issues/1428
 set ::env(DIODE_INSERTION_STRATEGY) 1
