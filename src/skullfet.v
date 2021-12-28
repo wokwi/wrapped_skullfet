@@ -8,3 +8,15 @@ module skullfet_inverter (
     output Y
 );
 endmodule
+
+(* blackbox *)
+module skullfet_nand (
+`ifdef USE_POWER_PINS
+    input  VGND,
+    input  VPWR,
+`endif  // USE_POWER_PINS
+    input  A,
+    input  B,
+    output Y
+);
+endmodule

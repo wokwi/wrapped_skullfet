@@ -146,7 +146,7 @@ module wrapped_skullfet(
     `endif
 
     // permanently set oeb so that outputs are always enabled: 0 is output, 1 is high-impedance
-    assign buf_io_oeb = {{`MPRJ_IO_PADS-9{1'b0}}, 1'b1, 8'b0};
+    assign buf_io_oeb = {{`MPRJ_IO_PADS-13{1'b0}}, 5'b01101, 8'b0};
  
     // Instantiate your module here, 
     // connecting what you need of the above signals. 
@@ -168,6 +168,26 @@ module wrapped_skullfet(
 `endif
         .A(io_in[8]),
         .Y(buf_io_out[9])
+    );
+
+    skullfet_nand skullfet_nand_1(
+`ifdef USE_POWER_PINS
+        .VPWR(vccd1),
+        .VGND(vssd1),
+`endif
+        .A(la1_data_in[0]),
+        .B(la1_data_in[1]),
+        .Y(buf_la1_data_out[1])
+    );
+
+    skullfet_nand skullfet_nand_2(
+`ifdef USE_POWER_PINS
+        .VPWR(vccd1),
+        .VGND(vssd1),
+`endif
+        .A(io_in[10]),
+        .B(io_in[11]),
+        .Y(buf_io_out[12])
     );
 
 endmodule 

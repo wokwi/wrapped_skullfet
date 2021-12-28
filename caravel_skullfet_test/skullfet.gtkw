@@ -1,18 +1,19 @@
 [*]
 [*] GTKWave Analyzer v3.3.103 (w)1999-2019 BSI
-[*] Sat Dec 25 02:27:00 2021
+[*] Tue Dec 28 18:34:57 2021
 [*]
 [dumpfile] "/home/uri/openmpw/caravel_user_project/verilog/dv/caravel_skullfet_test/skullfet.vcd"
-[dumpfile_mtime] "Sat Dec 25 02:25:09 2021"
-[dumpfile_size] 146311207
+[dumpfile_mtime] "Tue Dec 28 18:31:30 2021"
+[dumpfile_size] 118132288
 [savefile] "/mnt/c/P/wrapped_skullfet/caravel_skullfet_test/skullfet.gtkw"
 [timestart] 0
 [size] 1908 999
 [pos] -1 -1
-*-24.448299 160125000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+*-24.107382 16100000 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
 [treeopen] skullfet_tb.
 [treeopen] skullfet_tb.uut.
 [treeopen] skullfet_tb.uut.mprj.
+[treeopen] skullfet_tb.uut.mprj.wrapped_skullfet_5.
 [sst_width] 214
 [signals_width] 243
 [sst_expanded] 1
@@ -23,13 +24,20 @@ skullfet_tb.inverter_out
 @200
 -
 @28
+skullfet_tb.nand_in_a
+skullfet_tb.nand_in_b
+@29
+skullfet_tb.nand_out
+@200
+-
+@28
 skullfet_tb.uut.mprj.wrapped_skullfet_5.la1_data_in[31:0]
 skullfet_tb.uut.mprj.wrapped_skullfet_5.la1_data_out[31:0]
 @22
 skullfet_tb.uut.mprj.wrapped_skullfet_5.la1_oenb[31:0]
 @200
 -
-@23
+@22
 skullfet_tb.c_test_result[3:0]
 [pattern_trace] 1
 [pattern_trace] 0

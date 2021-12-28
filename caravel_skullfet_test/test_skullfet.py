@@ -39,6 +39,27 @@ async def test_logic(dut):
     await ClockCycles(dut.clk, 1)
     assert dut.inverter_out.value == 1
 
+    # Test the NAND gate through the GPIO
+    dut.nand_in_a.value = 0
+    dut.nand_in_b.value = 0
+    await ClockCycles(dut.clk, 1)
+    assert dut.nand_out.value == 1
+
+    dut.nand_in_a.value = 1
+    dut.nand_in_b.value = 0
+    await ClockCycles(dut.clk, 1)
+    assert dut.nand_out.value == 1
+
+    dut.nand_in_a.value = 1
+    dut.nand_in_b.value = 0
+    await ClockCycles(dut.clk, 1)
+    assert dut.nand_out.value == 1
+
+    dut.nand_in_a.value = 1
+    dut.nand_in_b.value = 1
+    await ClockCycles(dut.clk, 1)
+    assert dut.nand_out.value == 0
+
     # Wait for C test code to finish running
     await First(Edge(dut.c_test_result), ClockCycles(dut.clk, 12000))
 

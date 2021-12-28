@@ -24,11 +24,14 @@
 
 void main()
 {
-    // 1 input
-    reg_mprj_io_8 =   GPIO_MODE_USER_STD_INPUT_PULLUP;
+    // nand/inverter inputs
+    reg_mprj_io_8  =   GPIO_MODE_USER_STD_INPUT_PULLUP;
+    reg_mprj_io_10 =   GPIO_MODE_USER_STD_INPUT_PULLUP;
+    reg_mprj_io_11 =   GPIO_MODE_USER_STD_INPUT_PULLUP;
 
-    // 1 output 
+    // nand/inverter outputs
     reg_mprj_io_9 =   GPIO_MODE_USER_STD_OUTPUT;
+    reg_mprj_io_12 =   GPIO_MODE_USER_STD_OUTPUT;
 
     /* Apply configuration */
     reg_mprj_xfer = 1;

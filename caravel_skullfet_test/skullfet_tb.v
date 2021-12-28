@@ -41,6 +41,12 @@ module skullfet_tb;
     assign mprj_io[8] = inverter_in;
 		wire inverter_out = mprj_io[9];
 
+		wire nand_in_a;
+		wire nand_in_b;
+    assign mprj_io[10] = nand_in_a;
+    assign mprj_io[11] = nand_in_b;
+		wire nand_out = mprj_io[12];
+
 		wire [3:0] c_test_result = uut.soc.mgmt_out_predata[31:28];
     /////
 
