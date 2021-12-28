@@ -10,6 +10,8 @@ project:
 # optional interfaces you want to use: gpio, la1, la2, la3, irq, clk2, wishbone & openram
 interfaces: ['la1', 'gpio']
 
+custom_cells_file: src/skullfet-functional.v
+
 # test within caravel
 caravel_test:
   recipe: "coco_test"
