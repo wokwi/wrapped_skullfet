@@ -20,15 +20,15 @@
 #define PROJECT_ID              5
 
 #define TEST_RESULT_PASS        0x1
-#define TEST_RESULT_FAIL		    0xf
+#define TEST_RESULT_FAIL        0xf
 
 void main()
 {
-  	// 1 input
-		reg_mprj_io_8 =   GPIO_MODE_USER_STD_INPUT_PULLUP;
+    // 1 input
+    reg_mprj_io_8 =   GPIO_MODE_USER_STD_INPUT_PULLUP;
 
     // 1 output 
-		reg_mprj_io_9 =   GPIO_MODE_USER_STD_OUTPUT;
+    reg_mprj_io_9 =   GPIO_MODE_USER_STD_OUTPUT;
 
     /* Apply configuration */
     reg_mprj_xfer = 1;
@@ -44,17 +44,17 @@ void main()
 
     // Test inverter logic
     reg_la1_data = 1;
-		if (reg_la1_data & 1) {
-				reg_mprj_datal = TEST_RESULT_FAIL << 28;
-				return;
-		}
+    if (reg_la1_data & 1) {
+        reg_mprj_datal = TEST_RESULT_FAIL << 28;
+        return;
+    }
 
     reg_la1_data = 0;
-		if (!(reg_la1_data & 1)) {
-				reg_mprj_datal = TEST_RESULT_FAIL << 28;
-				return;
-		}
+    if (!(reg_la1_data & 1)) {
+        reg_mprj_datal = TEST_RESULT_FAIL << 28;
+        return;
+    }
 
-		reg_mprj_datal = TEST_RESULT_PASS << 28;
+    reg_mprj_datal = TEST_RESULT_PASS << 28;
 }
 
