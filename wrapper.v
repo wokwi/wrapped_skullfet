@@ -146,9 +146,8 @@ module wrapped_skullfet(
     `endif
 
     // permanently set oeb so that outputs are always enabled: 0 is output, 1 is high-impedance
-    assign buf_io_oeb = {`MPRJ_IO_PADS{1'b0}};
-    assign buf_io_oeb[8] = 1'b1;
-
+    assign buf_io_oeb = {{`MPRJ_IO_PADS-9{1'b0}}, 1'b1, 8'b0};
+ 
     // Instantiate your module here, 
     // connecting what you need of the above signals. 
     // Use the buffered outputs for your module's outputs.
