@@ -16,5 +16,5 @@ module skullfet_inverter (
 
   wire buf_not_A;
   buf buf0 (buf_not_A, !A);
-  assign Y = power_good ? !buf_not_A : 1'bx;
+  assign Y = power_good ? buf_not_A : 1'bx;
 endmodule
