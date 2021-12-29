@@ -6,7 +6,7 @@ MACRO skullfet_nand
   CLASS BLOCK ;
   FOREIGN skullfet_nand ;
   ORIGIN 0.000 0.000 ;
-  SIZE 16.200 BY 13.905 ;
+  SIZE 16.200 BY 14.310 ;
   PIN A
     DIRECTION INPUT ;
     USE SIGNAL ;
