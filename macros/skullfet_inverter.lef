@@ -204,6 +204,8 @@ MACRO skullfet_inverter
         RECT 3.920 1.690 7.430 2.230 ;
         RECT 4.460 1.420 6.890 1.690 ;
         RECT 4.730 1.150 6.890 1.420 ;
+      LAYER met3 ;
+        RECT 2.600 0.800 8.800 13.900 ;
   END
 END skullfet_inverter
 END LIBRARY
