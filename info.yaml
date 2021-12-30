@@ -6,6 +6,8 @@ project:
   picture: docs/skullfet_inverter.png
   author: "Uri Shaked"
   license: LICENSE
+  waive_lvs: "LVS failing due to custom cells"
+  
 
 # optional interfaces you want to use: gpio, la1, la2, la3, irq, clk2, wishbone & openram
 interfaces: ['la1', 'gpio']
