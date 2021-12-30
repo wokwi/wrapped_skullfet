@@ -55,4 +55,4 @@ set ::env(FP_HORIZONTAL_HALO) 1.5
 set ::env(FP_VERTICAL_HALO) 1.5
 
 # Workaround for https://github.com/The-OpenROAD-Project/OpenROAD/issues/1428
-set ::env(DIODE_INSERTION_STRATEGY) 1
+set ::env(DIODE_INSERTION_STRATEGY) 4
