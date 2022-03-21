@@ -151,43 +151,13 @@ module wrapped_skullfet(
     // Instantiate your module here, 
     // connecting what you need of the above signals. 
     // Use the buffered outputs for your module's outputs.
-
-    skullfet_inverter skullfet_inverter_1(
+    skullfet_inverter_10x skullfet_inverter_10x_1(
 `ifdef USE_POWER_PINS
         .VPWR(vccd1),
         .VGND(vssd1),
 `endif
         .A(la1_data_in[0]),
         .Y(buf_la1_data_out[0])
-    );
-
-    skullfet_inverter skullfet_inverter_2(
-`ifdef USE_POWER_PINS
-        .VPWR(vccd1),
-        .VGND(vssd1),
-`endif
-        .A(io_in[8]),
-        .Y(buf_io_out[9])
-    );
-
-    skullfet_nand skullfet_nand_1(
-`ifdef USE_POWER_PINS
-        .VPWR(vccd1),
-        .VGND(vssd1),
-`endif
-        .A(la1_data_in[0]),
-        .B(la1_data_in[1]),
-        .Y(buf_la1_data_out[1])
-    );
-
-    skullfet_nand skullfet_nand_2(
-`ifdef USE_POWER_PINS
-        .VPWR(vccd1),
-        .VGND(vssd1),
-`endif
-        .A(io_in[10]),
-        .B(io_in[11]),
-        .Y(buf_io_out[12])
     );
 
 endmodule 
