@@ -179,5 +179,15 @@ module wrapped_skullfet(
         .Y(buf_io_out[14])
     );
 
+    skullfet_nand skullfet_nand_1(
+`ifdef USE_POWER_PINS
+        .VPWR(vccd1),
+        .VGND(vssd1),
+`endif
+        .A(io_in[10]),
+        .B(io_in[11]),
+        .Y(buf_io_out[12])
+    );
+
 endmodule 
 `default_nettype wire
