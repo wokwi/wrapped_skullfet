@@ -1,0 +1,12 @@
+VERSION 5.7 ;
+  NOWIREEXTENSIONATPIN ON ;
+  DIVIDERCHAR "/" ;
+  BUSBITCHARS "[]" ;
+MACRO skullfet_inverter_10x
+  CLASS BLOCK ;
+  FOREIGN skullfet_inverter_10x ;
+  ORIGIN -2500.000 -1650.000 ;
+  SIZE 6500.000 BY 11400.000 ;
+END skullfet_inverter_10x
+END LIBRARY
+
