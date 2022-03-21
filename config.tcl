@@ -54,5 +54,9 @@ set ::env(PDN_CFG) $::env(DESIGN_DIR)/pdn.tcl
 set ::env(FP_HORIZONTAL_HALO) 1.5
 set ::env(FP_VERTICAL_HALO) 1.5
 
+set ::env(GLB_RT_OBS)  "li1  65 34 70 135,
+       met1 65 34 70 135,
+       met2 65 34 70 135"
+
 # Workaround for https://github.com/The-OpenROAD-Project/OpenROAD/issues/1428
 set ::env(DIODE_INSERTION_STRATEGY) 4
