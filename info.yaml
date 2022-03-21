@@ -19,7 +19,7 @@ caravel_test:
   recipe: "coco_test"
   gl_recipe: "coco_test_gl"
   directory: "caravel_skullfet_test"
-  id: 5
+  id: 6
   module_name: "wrapped_skullfet"
 
 # module test
