@@ -17,7 +17,7 @@
 
 #include "verilog/dv/caravel/defs.h"
 
-#define PROJECT_ID              5
+#define PROJECT_ID              6
 
 #define TEST_RESULT_PASS        0x1
 #define TEST_RESULT_FAIL        0xf

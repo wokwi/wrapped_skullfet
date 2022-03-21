@@ -28,7 +28,7 @@ async def test_logic(dut):
     dut.RSTB <= 1
 
     # wait with a timeout for the project to become active
-    await with_timeout(RisingEdge(dut.uut.mprj.wrapped_skullfet_5.active), 180, 'us')
+    await with_timeout(RisingEdge(dut.uut.mprj.wrapped_skullfet_6.active), 180, 'us')
 
     # Test the inverter through the GPIO
     dut.inverter_in.value = 1
