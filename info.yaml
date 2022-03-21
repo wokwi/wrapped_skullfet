@@ -7,7 +7,7 @@ project:
   author: "Uri Shaked"
   license: LICENSE
   waive_lvs: "LVS failing due to custom cells"
-  
+  waive_caravel: 'old test for Pico based SoC'
 
 # optional interfaces you want to use: gpio, la1, la2, la3, irq, clk2, wishbone & openram
 interfaces: ['la1', 'gpio']
@@ -43,8 +43,8 @@ source:
     - src/skullfet-functional.v
 
 # gds - check nothing on metal 5, DRC & LVS
-gds:
-  directory: "gds"
+final:
+  directory: "final"
   gds_filename: "wrapped_skullfet.gds"
   lvs_filename: "wrapped_skullfet.lvs.powered.v"
   lef_filename: "wrapped_skullfet.lef"
