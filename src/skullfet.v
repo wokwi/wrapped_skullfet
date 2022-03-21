@@ -10,6 +10,17 @@ module skullfet_inverter (
 endmodule
 
 (* blackbox *)
+module skullfet_inverter_10x (
+`ifdef USE_POWER_PINS
+    input  VGND,
+    input  VPWR,
+`endif  // USE_POWER_PINS
+    input  A,
+    output Y
+);
+endmodule
+
+(* blackbox *)
 module skullfet_nand (
 `ifdef USE_POWER_PINS
     input  VGND,
